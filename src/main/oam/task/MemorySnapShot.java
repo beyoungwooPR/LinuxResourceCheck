@@ -38,4 +38,5 @@ public class MemorySnapShot {
 	    public void setCached(long memCached) {
 	        this.memCached = memCached;
 	    }
+
 }

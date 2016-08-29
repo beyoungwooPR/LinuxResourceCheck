@@ -32,8 +32,10 @@ public class MemoryGetCurrentValue {
                     memory.setCached(Long.valueOf(infoArray[1]));
                 }
 
-                if (hitCount >= 4)
-                    break;
+                if (hitCount >= 4) {
+					memory.setUsage();
+					break;
+				}
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -46,10 +48,21 @@ public class MemoryGetCurrentValue {
                 }
             }
         }
+
+
         return 0;
     }
 
-    public long getMemTotal() {
-        return memory.getMemTotal();
-    }
+	public long getMemTotal() {
+		return memory.getMemTotal();
+	}
+
+	public long getMemFree() {
+		return memory.getMemFree();
+	}
+
+	public long getUsage() {
+		return memory.getUsage();
+	}
+
 }

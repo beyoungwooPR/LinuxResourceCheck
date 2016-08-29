@@ -10,8 +10,9 @@ public class ScheduledTasks {
 	public void LinuxResourceCheck() {
 
 		MemoryGetCurrentValue mem = new MemoryGetCurrentValue();
-		System.out.println(mem.getMemTotal());
-
+		mem.CurrentMemoryStatus();
+		System.out.println("mem usage: " + mem.getUsage() + "%, " 
+				+ mem.getMemFree() + "/" + mem.getMemTotal());
 	}
 
 }

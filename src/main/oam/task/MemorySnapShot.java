@@ -6,6 +6,7 @@ public class MemorySnapShot {
 	    private long memFree;
 	    private long memBuffers;
 	    private long memCached;
+	    private long memUsage;
 
 	    public long getMemTotal() {
 	        return memTotal;
@@ -37,6 +38,15 @@ public class MemorySnapShot {
 
 	    public void setCached(long memCached) {
 	        this.memCached = memCached;
+	    }
+
+	    public long getUsage() {
+			return memUsage;
+		}
+
+	    public void setUsage() {
+	        this.memUsage = (this.memFree + this.memBuffers + this.memCached) / this.memTotal * 100;
+	        //this.memUsage = ((this.memTotal - this.memFree - this.memBuffers - this.memCached) / this.memTotal) * 100;
 	    }
 
 }

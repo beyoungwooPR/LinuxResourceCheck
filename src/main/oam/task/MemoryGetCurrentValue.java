@@ -46,13 +46,10 @@ public class MemoryGetCurrentValue {
                 }
             }
         }
-
         return 0;
     }
 
     public long getMemTotal() {
         return memory.getMemTotal();
     }
-
-
 }

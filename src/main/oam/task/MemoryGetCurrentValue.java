@@ -7,7 +7,7 @@ public class MemoryGetCurrentValue {
 	private MemorySnapShot memory = new MemorySnapShot();
     private final static String MeminfoPath="/proc/meminfo";
 
-    public int CurrentMemoryStatus() {
+    public int CurrentStatus() {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new InputStreamReader(new FileInputStream(MeminfoPath)));
